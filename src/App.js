@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container">
       <div className="content">
-        <h1>MOVIE SEARCH</h1>
+        <h1>MOVIE DATABASE</h1>
         <SearchMovie />
       </div>
       <Footer />

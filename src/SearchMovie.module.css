@@ -1,8 +1,10 @@
 .form {
   display: flex;
+  justify-content: space-around;
 }
 
 .input {
+  font-size: 1rem;
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   background-color: transparent;
@@ -18,16 +20,15 @@
   background-color: #333333;
   color: #f4f4f4;
   border-radius: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   border: none;
   outline: none;
   cursor: pointer;
   transition: background-color 0.1s;
-  width: 100px;
 }
 
 .button:hover {
-  background-color: #666666;
+  background-color: cadetblue;
 }
 
 .card {

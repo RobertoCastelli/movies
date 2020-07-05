@@ -20,7 +20,7 @@ const SearchMovie = () => {
       console.log(data);
       setMovies(data.results);
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   };
 
@@ -36,7 +36,7 @@ const SearchMovie = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
         <button type="submit" className={searchMovieStyle.button}>
-          SUBMIT
+          SEARCH
         </button>
       </form>
       <div className={searchMovieStyle.cardList}>
