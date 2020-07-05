@@ -1,0 +1,27 @@
+.form {
+  display: grid;
+}
+
+.input {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #999999;
+  outline: none;
+}
+
+.button {
+  font-family: "Walter Turncoat", cursive;
+  background-color: #333333;
+  color: #f4f4f4;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.button:hover {
+  background-color: #666666;
+}
