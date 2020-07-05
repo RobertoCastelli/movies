@@ -1,13 +1,16 @@
 .form {
-  display: grid;
+  display: flex;
 }
 
 .input {
   margin: 1rem 0;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  border: 1px solid #999999;
+  background-color: transparent;
+  border-bottom: 1px solid #333333;
   outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .button {
@@ -20,8 +23,34 @@
   outline: none;
   cursor: pointer;
   transition: background-color 0.1s;
+  width: 100px;
 }
 
 .button:hover {
   background-color: #666666;
+}
+
+.card {
+  display: flex;
+  margin: 1rem 0;
+  box-shadow: -1px 1px 25px 1px#999999;
+  border-radius: 1rem;
+}
+
+@media (max-width: 425px) {
+  .card {
+    display: grid;
+  }
+
+  .cardImage {
+    margin: auto;
+  }
+}
+
+.cardImage {
+  padding: 1rem;
+}
+
+.cardContent {
+  padding: 0 1rem 1rem 1rem;
 }

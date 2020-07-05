@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f4f4;
   color: #333333;
+  letter-spacing: 0.08rem;
 }
 
 code {
@@ -19,10 +20,15 @@ code {
   box-sizing: border-box;
 }
 
-h1 {
+h1,
+footer {
   text-align: center;
 }
 
 html {
   font-size: 1rem;
+}
+
+p {
+  font-size: 0.8rem;
 }

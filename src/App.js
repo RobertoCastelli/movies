@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.css";
 import SearchMovie from "./SearchMovie";
+import Footer from "./Footer";
 
 function App() {
   return (
     <div className="container">
-      <h1>MOVIE SEARCH</h1>
-      <p>powered with React</p>
-      <SearchMovie />
+      <div className="content">
+        <h1>MOVIE SEARCH</h1>
+        <SearchMovie />
+      </div>
+      <Footer />
     </div>
   );
 }

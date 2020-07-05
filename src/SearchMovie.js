@@ -8,6 +8,7 @@ const SearchMovie = () => {
 
   const searchMovies = async (e) => {
     e.preventDefault();
+
     console.log("submitting request");
     const apiKey = "f48e2ec8ce02b71e8ba1cf229ad73fe6";
     const language = "en-US";
@@ -19,16 +20,13 @@ const SearchMovie = () => {
       console.log(data);
       setMovies(data.results);
     } catch (err) {
-      console.error(err + "there is and error");
+      console.error(err);
     }
   };
 
   return (
     <>
       <form className={searchMovieStyle.form} onSubmit={searchMovies}>
-        <label htmlFor="query" className={searchMovieStyle.label}>
-          movie name{" "}
-        </label>
         <input
           className={searchMovieStyle.input}
           type="text"
@@ -56,6 +54,7 @@ const SearchMovie = () => {
                 <p>release date: {movie.release_date}</p>
                 <p>popularity: {movie.popularity}</p>
                 <p>vote: {movie.vote_average}</p>
+                <p>{movie.overview}</p>
               </div>
             </div>
           ))}
