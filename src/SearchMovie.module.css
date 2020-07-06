@@ -35,7 +35,6 @@
 .card {
   display: flex;
   margin: 1rem 0;
-  box-shadow: -1px 1px 25px 1px#999999;
   border-radius: 1rem;
   background-color: bisque;
 }
@@ -61,4 +60,12 @@
 
 .cardContent {
   padding: 0 1rem 1rem 1rem;
+}
+
+.alertText {
+  margin: 1rem auto;
+  padding: 1rem;
+  color: red;
+  font-style: italic;
+  width: fit-content;
 }

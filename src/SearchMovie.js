@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import searchMovieStyle from "./SearchMovie.module.css";
+import MovieCard from "./MovieCard";
 
 const SearchMovie = () => {
   //states
@@ -9,18 +10,23 @@ const SearchMovie = () => {
   const searchMovies = async (e) => {
     e.preventDefault();
 
-    console.log("submitting request");
-    const apiKey = "f48e2ec8ce02b71e8ba1cf229ad73fe6";
-    const language = "en-US";
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${query}`;
+    if (query !== "") {
+      document.getElementById("textAlert").innerText = "";
+      console.log("submitting request");
+      const apiKey = "f48e2ec8ce02b71e8ba1cf229ad73fe6";
+      const language = "en-US";
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${query}`;
 
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log(data);
-      setMovies(data.results);
-    } catch (err) {
-      console.log(err);
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log(data);
+        setMovies(data.results);
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      document.getElementById("textAlert").innerText = "SEARCH A MOVIE";
     }
   };
 
@@ -39,24 +45,20 @@ const SearchMovie = () => {
           SEARCH
         </button>
       </form>
+      <p id="textAlert" className={searchMovieStyle.alertText}></p>
       <div className={searchMovieStyle.cardList}>
         {movies
           .filter((movie) => movie.poster_path)
           .map((movie) => (
-            <div className={searchMovieStyle.card} key={movie.id}>
-              <img
-                className={searchMovieStyle.cardImage}
-                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                alt="card-img"
-              />
-              <div className={searchMovieStyle.cardContent}>
-                <h3>{movie.title}</h3>
-                <p>release date: {movie.release_date}</p>
-                <p>popularity: {movie.popularity}</p>
-                <p>vote: {movie.vote_average}</p>
-                <p>{movie.overview}</p>
-              </div>
-            </div>
+            <MovieCard
+              key={movie.id}
+              poster={movie.poster_path}
+              title={movie.title}
+              date={movie.release_date}
+              popularity={movie.popularity}
+              vote={movie.vote_average}
+              overview={movie.overview}
+            />
           ))}
       </div>
     </>
