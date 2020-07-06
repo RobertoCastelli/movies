@@ -22,6 +22,7 @@
   border-radius: 1rem;
   padding: 1rem;
   border: none;
+
   outline: none;
   cursor: pointer;
   transition: background-color 0.1s;
@@ -36,6 +37,7 @@
   margin: 1rem 0;
   box-shadow: -1px 1px 25px 1px#999999;
   border-radius: 1rem;
+  background-color: bisque;
 }
 
 @media (max-width: 425px) {
@@ -45,6 +47,11 @@
 
   .cardImage {
     margin: auto;
+  }
+
+  .form {
+    display: block;
+    text-align: center;
   }
 }
 

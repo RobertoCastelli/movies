@@ -9,6 +9,8 @@ body {
   background-color: #f4f4f4;
   color: #333333;
   letter-spacing: 0.08rem;
+  background-image: url("./images/bg.jpg");
+  background-size: cover;
 }
 
 code {
